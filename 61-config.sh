@@ -103,12 +103,12 @@ EOF
 systemctl preset-all --preset-mode=enable-only
 systemctl disable systemd-sysupdate
 
-# 创建 /etc/fstab
+# 创建 /etc/fstab 需要根据自己的情况来
 cat > /etc/fstab << "EOF"
 # <file system>  <mount point>  <type>  <options>            <dump>  <pass>
-/dev/nvme0n1p1   /boot/efi      vfat    umask=0077            0      0
-/dev/nvme0n1p6   /              btrfs   noatime,subvol=@lfs   0      0
-/dev/nvme0n1p6   /home          btrfs   noatime,subvol=@home  0      0
+/dev/nvme0n1   /boot/efi      vfat    umask=0077            0      0
+/dev/nvme0n2  /              ext4   noatime,subvol=@lfs   0      0
+/dev/nvme0n2   /home          ext4   noatime,subvol=@home  0      0
 EOF
 
 # 用户 shell

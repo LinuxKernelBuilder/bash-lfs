@@ -294,7 +294,7 @@ insmod efi_uga
 set root=(hd0,6)
 
 menuentry "Linux From Scratch"  {
-    linux /@lfs/boot/vmlinuz root=/dev/nvme0n1p6 rootflags=subvol=@lfs loglevel=3 ro
+    linux /@lfs/boot/vmlinuz root=/dev/nvme0n2 rootflags=subvol=@lfs loglevel=3 ro
     initrd /@lfs/boot/initramfs.img
 }
 
